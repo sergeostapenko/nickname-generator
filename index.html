@@ -1,1 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nickname Generator</title>
+</head>
+<body>
+    <h1>Nickname Generator</h1>
+    <button onclick="generateNewNickname()">generate</button>
+    <div id="nickname"></div>
+    <script>
+        function generateNickname() {
+            var adjectives = ["happy", "funny", "silly", "crazy", "cool", "awesome", "adorable", "lovely", "playful", "sparkling"];
+            var nouns = ["panda", "unicorn", "dragon", "tiger", "lion", "elephant", "monkey", "kangaroo", "giraffe", "penguin"];
+            var adjective = adjectives[Math.floor(Math.random() * adjectives.length)];
+            var noun = nouns[Math.floor(Math.random() * nouns.length)];
+            var nickname = adjective + "_" + noun;
+            return nickname;
+        }
 
+        var nicknameContainer = document.getElementById("nickname");
+        function generateNewNickname() {
+            nicknameContainer.innerText = generateNickname();
+        }
+    </script>
+</body>
+</html>
